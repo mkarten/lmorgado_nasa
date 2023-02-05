@@ -159,10 +159,10 @@ namespace lmorgado_nasa
             display.kilometers_per_second = data.relative_velocity.kilometers_per_second;
             display.kilometers_per_hour = data.relative_velocity.kilometers_per_hour;
             display.miles_per_hour = data.relative_velocity.miles_per_hour;
-            display.astronomical = data.miss_distance.astronomical;
-            display.lunar = data.miss_distance.lunar;
-            display.kilometers = data.miss_distance.kilometers;
-            display.miles = data.miss_distance.miles;
+            display.Distance_astronomical = data.miss_distance.astronomical;
+            display.Distance_lunar = data.miss_distance.lunar;
+            display.Distance_kilometers = data.miss_distance.kilometers;
+            display.Distance_miles = data.miss_distance.miles;
             display.orbiting_body = data.orbiting_body;
             display.is_potentially_hazardous_asteroid = is_potentially_hazardous_asteroid;
             display.is_sentry_object = is_sentry_object;
@@ -187,6 +187,7 @@ namespace lmorgado_nasa
         public string id { get; set; }
         public string name { get; set; }
         public double absolute_magnitude_h { get; set; }
+        public string Distance_kilometers { get; set; }
         public double estimated_diameter_min { get; set; }
         public double estimated_diameter_max { get; set; }
         public string close_approach_date { get; set; }
@@ -197,10 +198,9 @@ namespace lmorgado_nasa
         public string kilometers_per_second { get; set; }
         public string kilometers_per_hour { get; set; }
         public string miles_per_hour { get; set; }
-        public string astronomical { get; set; }
-        public string lunar { get; set; }
-        public string kilometers { get; set; }
-        public string miles { get; set; }
+        public string Distance_astronomical { get; set; }
+        public string Distance_lunar { get; set; }
+        public string Distance_miles { get; set; }
     }
     // the Representation of neo feed list from the nasa api
     class NEOFeed
