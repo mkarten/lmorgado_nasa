@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lmorgado_nasa", "lmorgado_nasa.csproj", "{7DEF82E3-FC66-4B1B-9335-06A38506957F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DEF82E3-FC66-4B1B-9335-06A38506957F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DEF82E3-FC66-4B1B-9335-06A38506957F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DEF82E3-FC66-4B1B-9335-06A38506957F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DEF82E3-FC66-4B1B-9335-06A38506957F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B32E459-0492-4B89-AED9-C14210603CB9}
+	EndGlobalSection
+EndGlobal

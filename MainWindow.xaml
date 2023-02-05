@@ -1,0 +1,86 @@
+﻿<Window x:Class="lmorgado_nasa.MainWindow"
+        x:Name="App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lmorgado_nasa"
+        mc:Ignorable="d"
+        Title="lmorgado_nasa" Height="450" Width="800"
+        SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="#80423E3B"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type DataGridCell}">
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="LightGray"/>
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <SolidColorBrush Color="#80423E3B"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="#80423E3B"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="LightGray"/>
+            <Setter Property="RowBackground">
+                <Setter.Value>
+                    <SolidColorBrush Color="#80423E3B"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="MainGrid" Loaded="Grid_Loaded">
+        <Image x:Name="POTDImg" Source=" " Stretch="UniformToFill"/>
+        <Button Content="Get more infos about the APOD" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="POTDGetMoreInfo_Click"/>
+        <DataGrid x:Name="NeoData" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,222,0,0" IsReadOnly="True" IsSynchronizedWithCurrentItem="True" SelectionMode="Single" SelectedIndex="0" GridLinesVisibility="Vertical" VerticalGridLinesBrush="Black" VerticalAlignment="Bottom">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="View in browser">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding id}" Click="ViewSingleNeo"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox x:Name="Units" Margin="10,85,0,0" Width="120" SelectionChanged="Units_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Diameter Units" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#80423E3B" Foreground="White"/>
+        <DatePicker x:Name="StartDate" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Width="120" DisplayDate="2023-02-05" SelectedDateChanged="StartDate_SelectedDateChanged"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#80423E3B" Foreground="White"/>
+    </Grid>
+</Window>
+    
+
