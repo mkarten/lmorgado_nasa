@@ -186,8 +186,8 @@ namespace lmorgado_nasa
     {
         public string id { get; set; }
         public string name { get; set; }
-        public double absolute_magnitude_h { get; set; }
         public string Distance_kilometers { get; set; }
+        public double absolute_magnitude_h { get; set; }
         public double estimated_diameter_min { get; set; }
         public double estimated_diameter_max { get; set; }
         public string close_approach_date { get; set; }
